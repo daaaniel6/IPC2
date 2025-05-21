@@ -1,0 +1,13 @@
+<div class="menu-container" [class.open]="isOpen">
+  <div class="menu">
+    <button class="close-btn" (click)="toggleMenu()">X</button>
+    <ul>
+      <li><a (click)="goToHome()"> Inicio</a></li>
+      <li><a routerLink="/control-flow"> Fluejo de Control</a></li>
+      <li><a> Contacto</a></li>
+      <li><a> Configuracion</a></li>
+    </ul>
+  </div>
+</div>
+
+<button class="open-btn" (click)="toggleMenu()">Menu</button>

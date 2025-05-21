@@ -1,0 +1,73 @@
+<app-header title="Flujo de control" [subtitle]="subtitle1"></app-header>
+<app-side-menu></app-side-menu>
+<div id="main-content" class="content">
+  <div class="card-container">
+    <div class="card">
+      <div class="card-header">
+        <h2>Titulo</h2>
+      </div>
+      <div class="card-body">
+        <p>dfadfasdf dfasdf asdf asdfas d</p>
+        <button class="card-button">Guardar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Condicion If</h2>
+      </div>
+      <div class="card-body">
+        <p>Resultado de nota:</p>
+        @if (score >= 90) {
+        <h1>Excelente!!</h1>
+        } @else if (score >= 80) {
+        <h1>Muy bien</h1>
+        } @else if (score >= 70) {
+        <h1>Bien</h1>
+        } @else {
+        <h1>Necesitas mejorar</h1>
+        }
+
+        <button class="card-button" (click)="change()">Guardar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Bucle For</h2>
+      </div>
+      <div class="card-body">
+        @for (user of users; track user.id; let i = $index, even = $even) {
+        <p [class.clase-par]="even" [class.clase-impar]="!even">
+          #{{ i + 1 }}: {{ user.name }} - {{ user.score }}
+        </p>
+
+        }
+
+        <button class="card-button">Guardar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Switch</h2>
+      </div>
+      <div class="card-body">
+        Autenticacion: pass envian un correo en el telefono Autorizacion:
+        Depende del rol
+        <br />
+        <br />
+        Andminstrador: Acceso total Usuario: Ver, listar, agregar. @switch
+        (role) { @case ('admin'){
+        <h1>Eres administrador.</h1>
+        } @case ('user') {
+        <h1>Eres usuario.</h1>
+        } @default {
+        <h1>No tienes acceso.</h1>
+        } }
+
+        <button (click)="change()" class="card-button">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
